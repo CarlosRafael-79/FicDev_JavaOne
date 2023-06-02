@@ -24,6 +24,23 @@ public class JogoDaVelha {
         System.out.println("");
     }
     
+    public char ganhador(){
+        if(this.tabuleiro[0][0] == this.tabuleiro[1][1] && this.tabuleiro[1][1] == this.tabuleiro[2][2]){
+            return this.tabuleiro[1][1];
+        }
+        if(this.tabuleiro[0][2] == this.tabuleiro[1][1] && this.tabuleiro[1][1] == this.tabuleiro[2][0]){
+            return this.tabuleiro[1][1];
+        }
+        for(int i = 0; i < 3; i++){
+            if(this.tabuleiro[i][0] == this.tabuleiro[i][1] && this.tabuleiro[i][1] == this.tabuleiro[i][2]){
+                return this.tabuleiro[i][0];
+            }
+            if(this.tabuleiro[0][i] == this.tabuleiro[1][i] && this.tabuleiro[1][i] == this.tabuleiro[2][i]){
+                return this.tabuleiro[i][0];
+            }
+        }
+        return '-';
+    }
     
     public void fazerJogada(int i, int j) throws IndexOutOfBoundsException{
         if(i < 0 || i > 2){
@@ -31,6 +48,9 @@ public class JogoDaVelha {
         }
         if(i < 0 || i > 2){
             throw new IndexOutOfBoundsException();
+        }
+        if(this.tabuleiro[i][j] != '-'){
+            throw new IllegalArgumentException();
         }
         this.tabuleiro[i][j] = this.getTurno() % 2 == 0 ? 'X' : 'O';
         this.turno++;
