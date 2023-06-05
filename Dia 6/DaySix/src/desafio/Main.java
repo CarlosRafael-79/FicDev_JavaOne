@@ -4,8 +4,6 @@
  */
 package desafio;
 
-import desafio.Tarefa.Prioridade;
-import java.util.Scanner;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -18,20 +16,7 @@ public class Main {
     public static void main(String[] args) {
         //Scanner input = new Scanner(System.in);
         Gerenciador gerenciador = new Gerenciador();
-        /*
-        Tarefa tarefa1 = new Tarefa("Jantar","Fazer o meu jantar");
-        Tarefa tarefa2 = new Tarefa("Estudar","Estudar para prova de amanhã",Prioridade.ALTA);
-        Tarefa tarefa3 = new Tarefa("Malhar","Fazer o treino de perna", Prioridade.MEDIA);
         
-        
-        
-        gerenciador.incluirTarefa(tarefa1);
-        gerenciador.incluirTarefa(tarefa2);
-        gerenciador.incluirTarefa(tarefa3);
-        
-        gerenciador.concluirTarefa(2);
-        
-        gerenciador.exibirTarefas();*/
         boolean parar = false;
         String escolhas[] = {"Adicionar", "Concluir", "Fechar"};
         String prioridades[] = {"Baixa", "Média", "Alto"};
@@ -71,14 +56,30 @@ public class Main {
                     opcoes,
                     opcoes[1]);
                     if(opcao == 0){
-                        Tarefa novo = new Tarefa(nome.getText(), descricao.getText());
+                        Tarefa novo = new Tarefa(nome.getText(), descricao.getText(), prioridade.getSelectedIndex());
                         gerenciador.incluirTarefa(novo);
+                        
+                        nome.setText("");
+                        descricao.setText("");
+                        prioridade.setSelectedIndex(0);
                     }
                     break;
                 case 1:
+                    String listaTarefas = "";
                     for(var tarefa : gerenciador.getTarefas()){
-                        JOptionPane.showMessageDialog(null, tarefa.toString());
+                        listaTarefas += "\n---------------------------------\nID: "+tarefa.getId()+"\nNome: "+tarefa.getNome()+"\nPrioridade: "+tarefa.getPrioridade()+"\nConcluida: "+tarefa.isConcluido()+"\nDescrição:\n "+ tarefa.getDescricao()+"\n";
                     }
+                    listaTarefas += "\n Digite o ID da tarefa que deseja concluir: ";
+                    String resposta = JOptionPane.showInputDialog(null, listaTarefas);
+                    if(resposta != null && resposta.matches("[0-9]+")){
+                       int respostaInt = Integer.parseInt(resposta);
+                       for(var tarefa : gerenciador.getTarefas()){
+                            if(tarefa.getId() == respostaInt){
+                                tarefa.setConcluido(true);
+                            }
+                        } 
+                    }
+                    
                     
                     break;
                 case 2:

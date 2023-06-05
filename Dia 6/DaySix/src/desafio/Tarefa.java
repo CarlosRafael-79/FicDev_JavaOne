@@ -14,6 +14,7 @@ public class Tarefa implements Comparable{
 
     public static enum Prioridade{
         BAIXA, MEDIA, ALTA
+        
     }
     private String nome;
     private String descricao;
@@ -26,9 +27,22 @@ public class Tarefa implements Comparable{
         this.descricao = descricao;
     }
     
-    public Tarefa(String nome, String descricao, Prioridade prioridade){
+    public Tarefa(String nome, String descricao, int p){
         this.nome = nome;
         this.descricao = descricao;
+        
+        Prioridade prioridade;
+        switch (p) {
+            case 2:
+                prioridade = Prioridade.ALTA;
+                break;
+            case 1:
+                prioridade = Prioridade.MEDIA;
+                break;
+            default:
+                prioridade = Prioridade.BAIXA;
+                break;
+        }
         this.prioridade = prioridade;
     }
     
