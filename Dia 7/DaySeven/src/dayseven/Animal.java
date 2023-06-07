@@ -1,20 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dayseven;
 
-/**
- *
- * @author ficdev
- */
 public class Animal {
-    int altura;
-    int pata;
+    private int altura;
+    private int pata;
     
     public Animal(int pata, int altura){
-        //o ponteiro this informa que está usando o atributo do objeto
         this.pata = pata;
         this.altura = altura;
+    }
+
+    @Override
+    public String toString() {
+        return "Animal(" + "Altura: " + altura + ", Pata: " + pata + ')';
+    }
+    
+    public void falar() {
+        System.out.println("Som");
+    }
+
+    public int getAltura() {
+        return altura;
+    }
+
+    public void setAltura(int altura) {
+        this.altura = altura;
+    }
+
+    public int getPata() {
+        return pata;
+    }
+
+    public void setPata(int pata) {
+        this.pata = pata;
     }
 }

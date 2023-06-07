@@ -1,25 +1,25 @@
 package dayseven;
 
-public class Cachorro extends Animal {
-    Pelagem pelagem;
-    
-    public Cachorro(int p, int a){
+public class Gato extends Animal {
+    private Pelagem pelagem;
+
+    public Gato(int p, int a){
         super(p, a);
     }
     
-    public Cachorro(int p, int a, Pelagem pelagem){
+    public Gato(int p, int a, Pelagem pelagem) {
         super(p, a);
         this.pelagem = pelagem;
     }
-
+    
     @Override
     public String toString() {
-        return "Cachorro(Patas: " + super.getPata() + ", Altura: " + super.getAltura() + ", Pelagem: " + pelagem + ')';
+        return "Gato(Patas: " + super.getPata() + ", Altura: " + super.getAltura() + ", Pelagem: " + pelagem + ')';
     }
     
     @Override
     public void falar() {
-        System.out.println("Au Au!");
+        System.out.println("Miau!");
     }
 
     public Pelagem getPelagem() {
