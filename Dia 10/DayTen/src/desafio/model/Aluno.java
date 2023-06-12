@@ -13,6 +13,10 @@ public class Aluno {
     private String nome;
     private int idade;
     private int idEscola;
+    
+    public Aluno(){
+        
+    }
 
     public Aluno(int id, String nome,int idade, int idEscola){
         this.id = id;

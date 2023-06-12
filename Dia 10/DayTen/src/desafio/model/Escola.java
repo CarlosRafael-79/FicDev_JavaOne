@@ -12,6 +12,10 @@ public class Escola {
     private int id;
     private String nome;
     
+    public Escola(){
+        
+    }
+    
     public Escola(int id, String nome){
         this.id = id;
         this.nome = nome;
