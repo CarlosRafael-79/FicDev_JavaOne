@@ -1,0 +1,14 @@
+sudo docker run --name ficdev -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres
+sudo service postgresql stop
+sudo docker exec -ti ficdev bash
+
+su postgres -c psql
+
+create database DayTen;
+\c dayten
+
+create table escola (id serial primary key, nome varchar(150));
+create table aluno (id serial primary key, nome varchar(150), idade int, id_escola int references escola(id));
+
+insert into escola(nome) values ('Escola Bom Jesus'), ('Escola Paulo Freire'), ('Escola Milton Junior');
+insert into aluno(nome,idade, id_escola) values ('Carlos Rafael',20,1),('Allan Toledo',20,2), ('Joao Vittor',20,3),('Aline',20,3);
