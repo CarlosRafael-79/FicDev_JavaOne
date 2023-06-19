@@ -4,6 +4,8 @@
  */
 package app;
 
+import java.util.List;
+import java.util.Scanner;
 import model.Aluno;
 import repository.AlunoDAO;
 import repository.Conexao;
@@ -13,17 +15,36 @@ import repository.Conexao;
  * @author ficdev
  */
 public class Main {
+    private static AlunoDAO alunoDAO = new AlunoDAO();
+    
+    private static void atualizarCoeficiente(int id, double coeficiente){
+        Aluno aluno = alunoDAO.read(id);
+        aluno.setCoeficiente(coeficiente);
+        alunoDAO.update(aluno);
+    }
     public static void main(String[] args) {
-        Conexao conexao = Conexao.getConexao();
-        AlunoDAO dao = new AlunoDAO();
-        Aluno aluno1 = new Aluno("Carlos Rafael", 10.0);
-        Aluno aluno2 = new Aluno(25,"Allan Toledo", 2.0);
         
-        dao.create(aluno1);
-        dao.create(aluno2);
+        List<Aluno> lista = alunoDAO.readAll();
+        Aluno aluno;
         
-        System.out.println(aluno2.getId());
-        conexao.close();
+        if(lista.isEmpty()){
+            aluno = new Aluno("Aluno Qualquer",10.0);
+            alunoDAO.create(aluno);
+        }else{
+            aluno = lista.get(lista.size()-1);
+            
+        }
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Digite o novo coeciente do aluno "+aluno.getName()+": ");
+        double novoCoeficiente = input.nextDouble();
+        
+        atualizarCoeficiente(aluno.getId(),novoCoeficiente);
+        
+        System.out.println("O coeficiente atual é: "+alunoDAO.read(aluno.getId()).getCoeficiente());
+        
+        Conexao.getConexao().close();
         
     }
 }

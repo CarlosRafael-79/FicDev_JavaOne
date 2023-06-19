@@ -14,7 +14,7 @@ import java.util.List;
 public interface DAO<T> {
     
     public void create(T objeto);
-    public T read(long id);
+    public T read(int id);
     public void update(T objeto);
     public void delete (T objeto);
     

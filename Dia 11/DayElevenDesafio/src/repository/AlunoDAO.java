@@ -15,25 +15,25 @@ public class AlunoDAO  implements DAO<Aluno>{
     
     @Override
     public void create(Aluno objeto){
-        int id = objeto.getId();
-        if(id != 0) objeto.setId(0);
+        //int id = objeto.getId();
+        //if(id != 0) objeto.setId(0);
         Conexao.getConexao().persist(objeto);
-        objeto.setId(id);
+        //objeto.setId(id);
     }
     @Override
-    public Aluno read(long id){
-        return null;
+    public Aluno read(int id){
+        return Conexao.getConexao().find(Aluno.class,id);
     }
     @Override
     public void update(Aluno objeto){
-        
+        Conexao.getConexao().merge(objeto);
     }
     @Override
     public void delete (Aluno objeto){
-        
+        Conexao.getConexao().remove(objeto);
     }
     @Override
     public List<Aluno> readAll(){
-        return null;
+        return Conexao.getConexao().findAll(Aluno.class);
     }
 }
