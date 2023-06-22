@@ -1,0 +1,11 @@
+com/carlos/app/Main.class
+com/carlos/repository/Dao.class
+com/carlos/repository/DesempenhoDao.class
+com/carlos/repository/TurmaDao.class
+com/carlos/model/Turma.class
+com/carlos/model/Desempenho.class
+com/carlos/repository/Conexao.class
+com/carlos/repository/DisciplinaDao.class
+com/carlos/model/Disciplina.class
+com/carlos/repository/AlunoDao.class
+com/carlos/model/Aluno.class

@@ -6,6 +6,7 @@ package com.carlos.model;
 
 import java.time.LocalTime;
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -16,6 +17,7 @@ import javax.persistence.ManyToOne;
  *
  * @author ficdev
  */
+@Entity
 public class Turma {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,8 +28,21 @@ public class Turma {
     @Column(name = "horario_fim")
     private LocalTime horarioFim;
     @ManyToOne
-    @JoinColumn(name="codigo_disciplina")
+    @JoinColumn(name="codigo_disciplina", nullable=true)
     private Disciplina disciplina;
+    
+    public Turma(){
+        
+    }
+
+    public Turma(String sala, LocalTime horarioInicio, LocalTime horarioFim, Disciplina disciplina) {
+        this.sala = sala;
+        this.horarioInicio = horarioInicio;
+        this.horarioFim = horarioFim;
+        this.disciplina = disciplina;
+    }
+    
+    
 
     /**
      * @return the codigo

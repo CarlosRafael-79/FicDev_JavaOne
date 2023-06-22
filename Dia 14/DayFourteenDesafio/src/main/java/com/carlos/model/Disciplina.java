@@ -15,6 +15,16 @@ public class Disciplina {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int codigo;
     private String nome;
+    
+    public Disciplina(){
+        
+    }
+
+    public Disciplina(String nome) {
+        this.nome = nome;
+    }
+    
+    
 
     /**
      * @return the codigo
