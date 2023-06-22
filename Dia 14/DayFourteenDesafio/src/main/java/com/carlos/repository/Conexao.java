@@ -21,7 +21,7 @@ public class Conexao {
     private static EntityManager em;
     
     private Conexao(){
-        factory = Persistence.createEntityManagerFactory("desafio13");
+        factory = Persistence.createEntityManagerFactory("desafio14");
         em = factory.createEntityManager();
     }
     
