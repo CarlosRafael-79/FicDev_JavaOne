@@ -1,0 +1,10 @@
+com/carlos/app/DesafioTwoApplication.class
+com/carlos/controller/EstoqueController.class
+com/carlos/repository/EstoqueRepository.class
+com/carlos/model/Entregador.class
+com/carlos/repository/EntregadorRepository.class
+com/carlos/model/User.class
+com/carlos/controller/UserController.class
+com/carlos/repository/UserRepository.class
+com/carlos/controller/EntregadorController.class
+com/carlos/model/Estoque.class

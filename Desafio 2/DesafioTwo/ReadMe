@@ -1,0 +1,4 @@
+A respeito do exercícios algumas considerações foram feitas:
+
+É dito: "uuid é um número inteiro que identifica o usuário em todo o escopo do ecossistema, e sua
+implementação não está prevista.", portanto, foi criado a classe do user e até feito o seu CRUD mas devido a esse trecho foi considerado que ela não deveria se relacionar com as outras entidades até o presente momento.
