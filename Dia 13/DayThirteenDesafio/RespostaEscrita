@@ -1,0 +1,7 @@
+Ao desenvolver um sistema, a adoção de um framework ORM (Object-Relational Mapping) pode trazer diversas vantagens. Primeiramente, um ORM oferece uma camada de abstração que simplifica a interação com o banco de dados, permitindo que os desenvolvedores trabalhem com objetos e classes em vez de lidar diretamente com consultas SQL. Isso torna o desenvolvimento mais produtivo, pois é possível focar na lógica de negócios em vez dos detalhes de armazenamento e recuperação de dados.
+
+Além disso, um ORM proporciona um aumento de produtividade, fornecendo recursos para mapear objetos para tabelas de banco de dados, executar consultas, gerenciar transações e lidar com relacionamentos entre objetos. Essa abstração reduz a quantidade de código repetitivo e acelera o desenvolvimento, facilitando também a manutenção do sistema.
+
+Outra vantagem é a portabilidade do banco de dados. Com um ORM, o código é independente do banco de dados específico, pois o framework se encarrega de traduzir as operações para o dialeto correto. Isso permite que você altere facilmente entre diferentes bancos de dados, conforme necessário, sem a necessidade de reescrever grandes partes do código, o que aumenta a flexibilidade e a escalabilidade do sistema.
+
+No que diz respeito à segurança, os ORMs geralmente incluem recursos integrados para prevenir ataques de injeção de SQL e garantir a integridade do sistema. Eles usam técnicas de parametrização de consultas e validação de entrada para proteger contra dados maliciosos.

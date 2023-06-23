@@ -61,7 +61,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>              
-                <mainClass>com.allantoledo.app.Main</mainClass>
+                <mainClass>com.carlos.app.Main</mainClass>
                     <release>14</release>
                     <excludes>
                         <exclude>
